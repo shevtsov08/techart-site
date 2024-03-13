@@ -1,0 +1,8 @@
+{
+	"autoload": {
+			"psr-4": {
+					"techart\\": "vendor/techart/core/classes"
+			}
+	},
+	"require": {}
+}

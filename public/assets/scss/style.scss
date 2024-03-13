@@ -1,0 +1,436 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+.header { 
+	&__inner { 
+		display:flex;
+		height: 150px;
+		align-items: center;
+	}
+}
+
+.footer { 
+	&__copyright { 
+		border-top: 1px solid #6C6E7B;
+		@extend %text-font;
+		padding: 70px 0 90px;
+	}
+}
+
+.top { 
+	&__inner { 
+		background-image: url(../images/bg.png);
+    height: 650px;
+    background-position: left;
+    background-repeat: no-repeat;
+		background-size: cover;
+	}
+		
+		
+	&__title { 
+		padding-top: 224px;
+		@extend %title-font;
+		line-height: 140%;
+		font-size: 64px;
+		color: $default;
+		margin-bottom: 35px;
+	}
+	&__text { 
+		@extend %text-font;
+		line-height: 160%;
+		color: $default;
+	}
+}
+
+.news { 
+	&__title { 
+		@extend %title-font;
+		font-size: 64px;
+		margin-bottom: 60px;
+	}
+	padding: 60px 0 82px;
+	&__items{ 
+		display: flex;
+    justify-content: space-between;
+		flex-wrap: wrap;
+		
+	}
+	&__item { 
+		width: 700px;
+		margin-bottom: 82px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		&-date { 
+			padding: 6px 18px;
+			background-color: #ECF2F5;
+			color: #6C6E7B;
+			border-radius: 20px;
+			@extend %text-font;
+			font-size: 16px;
+			max-width: 114px;
+			list-style: none;
+		}
+		&-title { 
+			@extend %title-font;
+			margin: 30px 0 30px;
+		}
+		&-text p{ 
+			@extend %text-font;
+			margin-bottom: 30px;
+			line-height: 160%;
+		}
+		&-button { 
+			display: flex;
+			justify-content: space-between;
+			padding: 16px 40px;
+			border-radius: 50px;
+			@extend %text-font;
+			font-weight: 600;
+			font-size: 16px;
+			border: 2px solid #841844;
+			width: 214px;
+			text-align: center;
+			text-transform: uppercase;
+			align-items: center;
+			& path { 
+				fill: #841844;
+
+			}
+			&:hover  path {
+				fill: #fff;
+				transition: all 0.5s;
+		}
+		}
+		&-button:hover { 
+			background-color: #841844;
+			color: #fff;
+			transition: all 0.5s;
+		}
+	}
+}
+.pagination { 
+	&__list{ 
+		display: flex;
+		justify-content: end;
+	}
+	&__item { 
+		width: 56px;
+		height: 56px;
+		border: 2px solid #841844;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 56px;
+		margin-right: 16px;
+		&--next { 
+			width: 118px;
+			height: 54px;
+			border-radius: 50px;
+			padding: 27px 58px 27px 44px;
+		}
+		& path { 
+			fill: #841844;
+
+		}
+		
+	}
+	&__item--active { 
+			background-color: #841844 !important;
+			color: #fff;
+	}
+	&__link{
+		@extend %text-font;
+		font-size: 16px;
+		color: #841844;
+		height: 100%;
+    width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		&--active { 
+			color: #fff;
+		}
+		&--start { 
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
+}
+
+
+.post { 
+	&__title { 
+		@extend %title-font;
+		font-size: 64px;
+		margin-bottom: 60px;
+	}
+	
+	&__inner { 
+		display: flex;
+		justify-content: space-between;
+		
+	}
+	&__item { 
+		max-width: 740px;
+		&-date { 
+			@extend %date;
+			margin-bottom: 40px;
+		}
+		&-title { 
+			@extend %title-font;
+			margin-bottom: 40px;
+		}
+		&-text p{ 
+			@extend %text-font;
+			margin-bottom: 22px;
+		}
+		&-img{ 
+			height: 585px;
+		
+			
+		}
+		
+		
+		
+		&-button { 
+			display: flex;
+			justify-content: space-between;
+			padding: 16px 40px;
+			border-radius: 50px;
+			@extend %text-font;
+			font-weight: 600;
+			font-size: 16px;
+			border: 2px solid #841844;
+			width: 280px;
+			text-align: center;
+			text-transform: uppercase;
+			align-items: center;
+			margin: 40px 0 140px;
+			& path { 
+				fill: #841844;
+
+			}
+			&:hover  path {
+				fill: #fff;
+				transition: all 0.5s;
+		   }
+			 
+		}
+		&-button:hover { 
+			background-color: #841844;
+			color: #fff;
+			transition: all 0.5s;
+		}
+		
+	}
+	
+}
+
+.breadcrumb { 
+	margin: 72px 0 22px;
+	display: flex;
+	
+	align-items: center;
+	text-align: center;
+	&__item { 
+		@extend %text-font;
+		font-size: 16px;
+		&--active { 
+			color: #6C6E7B;
+		}
+	}
+	&__link { 
+		color: #000;
+	}
+	& span { 
+			padding: 0 10px;
+			color: #000;
+	}
+}
+
+@media (max-width: 1100px)  { 
+	.post { 
+		&__title { 
+			font-size: 22px;
+		}
+		&__item { 
+			&-date { 
+				font-size: 14px;
+			}
+			&-title { 
+				font-size: 22px;
+			}
+			&-text p { 
+				font-size: 16px;
+			}
+			&-img{
+				height: 405px;
+				padding-top: 36px;
+			}
+			&-button { 
+				padding: 11px 14px;
+    	 width: 230px;
+			}
+		}
+		
+	}
+	.breadcrumb li   { 
+		font-size: 12px;
+		&span{
+			font-size: 12px;
+		}
+	}
+	
+	.news { 
+		&__item { 
+			width: 500px;
+
+			&-title { 
+				font-size: 22px;
+			}
+			&-text p { 
+				font-size: 16px;
+			}
+			&-button { 
+				padding: 10px 21px;
+				width: 165px;
+				font-size: 14px;
+			}
+		}
+		
+	}
+
+}
+@media (max-width: 680px)  { 
+	.post { 
+		
+		&__item {
+			&-img{
+				display: none;
+			}
+			
+		}
+		
+	}
+}
+@media (max-width: 600px)  { 
+	.top {
+		&__title { 
+			font-size: 42px;
+		}
+		&__text p {
+			font-size: 22px;
+		}
+	}
+ .news{
+	&__title { 
+		font-size: 42px;
+	}
+	&__item { 
+		&-date { 
+		font-size: 12px;
+		text-align: center;
+		}
+		&-title { 
+			font-size: 22px;
+		}
+		&-text p { 
+			font-size: 16px;
+		}
+		&-button { 
+			padding: 10px 21px;
+			width: 165px;
+			font-size: 14px;
+		}
+	}
+ }
+}
+
+@media (max-width: 460px)  { 
+
+	.pagination {
+    &__item {
+        width: 42px;
+        height: 42px;
+    }
+
+    &__item--next {
+        padding: 0;
+				width: 75px;
+    }
+	}
+
+	.top {
+		&__title { 
+			font-size: 32px;
+		}
+		&__text p {
+			font-size: 18px;
+		}
+	}
+	.footer__copyright { 
+		font-size: 12px;
+	}
+
+	.post { 
+		&__title { 
+			font-size: 16px;
+		}
+		&__item { 
+			&-date { 
+				font-size: 12px;
+			}
+			&-title { 
+				font-size: 18px;
+			}
+			&-text p { 
+				font-size: 14px;
+			}
+			&-button { 
+				padding: 8px 13px;
+				width: 185px;
+				font-size: 12px;
+			}
+			&-date { 
+				margin-bottom: 20px;
+			}
+
+		}
+		
+	}
+	.breadcrumb { 
+		flex-wrap: wrap;
+		text-align: left;
+	}
+	.breadcrumb li   { 
+		font-size: 12px;
+		& span{
+			font-size: 12px;
+		}
+	}
+		
+}
+
+@media (max-width: 350px)  { 
+	.top {
+		&__title { 
+			font-size: 32px;
+		}
+		&__text p {
+			font-size: 22px;
+		}
+	}
+
+	.pagination{
+		&__item { 
+			margin-right: 10px;
+		}
+	}
+}
+
